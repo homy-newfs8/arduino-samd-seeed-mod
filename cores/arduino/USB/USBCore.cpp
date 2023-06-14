@@ -161,6 +161,11 @@ uint8_t USBDeviceClass::SendInterfaces(uint32_t* total)
 	return interfaces;
 }
 
+void USBDeviceClass::wakeupHost()
+{
+	usbd.wakeupHost();
+}
+
 // Construct a dynamic configuration descriptor
 // This really needs dynamic endpoint allocation etc
 uint32_t USBDeviceClass::sendConfiguration(uint32_t maxlen)

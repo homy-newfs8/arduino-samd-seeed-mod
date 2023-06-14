@@ -113,6 +113,7 @@ public:
 	void ISRHandler();
 
 	bool isSuspended() const { return millis() - last_start_of_frame_received; }
+	void wakeupHost();
 
 private:
 	bool initialized;
