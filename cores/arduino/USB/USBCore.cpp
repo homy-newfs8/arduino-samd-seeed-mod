@@ -955,6 +955,7 @@ void USBDeviceClass::ISRHandler()
 	// Start-Of-Frame
 	if (usbd.isStartOfFrameInterrupt())
 	{
+		last_start_of_frame_received = millis();
 		usbd.ackStartOfFrameInterrupt();
 
 		// check whether the one-shot period has elapsed.  if so, turn off the LED

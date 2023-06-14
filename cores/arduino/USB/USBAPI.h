@@ -112,8 +112,11 @@ public:
 
 	void ISRHandler();
 
+	bool isSuspended() const { return millis() - last_start_of_frame_received; }
+
 private:
 	bool initialized;
+	uint32_t last_start_of_frame_received;
 };
 
 extern USBDeviceClass USBDevice;
